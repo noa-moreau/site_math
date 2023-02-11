@@ -1,0 +1,56 @@
+<html>
+	<head>
+	<title>  </title>
+		<script>
+
+			function reso2() {
+
+				var a=document.valeur.a.value;
+				var b=document.valeur.b.value;
+				var c=document.valeur.c.value;
+				var d=b*b-(4*a*c);
+				var rep;
+
+				if (d>0) {
+					rep = "S = { ("+ (-1*b) +"-√("+d+"))/"+(2*a)+";("+ (-1*b) +"+√("+d+"))/"+(2*a)+"}" ;
+				}
+				else if (d == 0) {
+					rep = "S = { ("+ (-1*b) +"-√("+d+"))/"+(2*a)+"}";
+				}
+				else if (d<0){
+					rep = "S = { ("+ (-1*b) +"-i√("+(-1*d)+"))/"+(2*a)+";("+ (-1*b) +"+i√("+(-1*d)+"))/"+(2*a)+"}";
+				}
+				else{
+					rep = "Veuillez entrez des chiffres";
+				}
+
+				document.getElementById("rep").innerHTML = "la réponse est "+ rep;
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<center>Entrez votre équation de 2<sup>nde</sup> degré dans les champs de texte.</font></center>
+
+		<br>
+		<br>
+
+	
+
+		<form name="valeur">
+
+			<input type="text" value="1" name="a">x<sup>2</sup>+
+			<input type="text" value="1" name="b">x+
+			<input type="text" value="1" name="c">
+
+			<br>
+			<center>
+			<input type="button" value="Solutions" OnClick="reso2()">
+			</center>
+
+			<p id="rep"></p>
+		</form>
+
+	<body>
+</html>
